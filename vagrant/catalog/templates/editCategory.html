@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<div class="container">
+
+<section class="formbox">
+
+  <div class="row">
+      <div class="card center-align col s10 m6 l6 offset-s1 offset-m3 offset-l3">
+          <div class="card-content">
+              <span class="card-title"> Edit Category </span>
+          </div>
+
+          <div class="card-action">
+            
+            <form method='POST' action="{{url_for('editCategory', category_id=category.id)}}">
+
+              <div class="input-field col s12">
+                <input name="name" value="{{category.name}}" type="text" class="validate" >
+                <label for="name"> Name </label>
+              </div>
+
+            <input class="btn red lighten-1" type='submit' value='Update'>
+            <a class="btn red lighten-1" href="{{url_for('showCategory')}}"> Cancel</a>
+            </form>
+
+          </div>
+      </div>
+
+  </div>
+</div>
+</section>
+</div>
+
+ {% endblock %}
